@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+body{
+  background: rgb[7, 12, 22];
+}
+
+.game{
+  display: block;
+  margin: auto;
+  padding:20px;
+  width: 800px;
+  background:#42f48cb0;
+}
