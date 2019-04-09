@@ -24,6 +24,11 @@ world[0][3][4] = 1
 world[0][1][5] = 1
 world[0][2][5] = 1
 world[0][3][5] = 1
+world[0][7][8] = 1
+world[0][8][9] = 1
+world[0][6][10] = 1
+world[0][7][10] = 1
+world[0][8][10] = 1
 
 scene = 'stop'
 
@@ -36,13 +41,6 @@ view = View.new(cell_num, screen_size, cell_size)
 view.change(world, turn)
 
 Window.loop do
-  # if Input.key_push?(K_SPACE)
-  #   # ターンがマックスより低いっていうのは過去っていうことだね
-  #   turn >= max ? doa.push_doa(world, turn) : doa.change_old_doa(world, turn)
-  #   turn += 1
-  #   view.change(world, turn)
-  #   puts "#{turn} #{max}"
-  # end
   mx = Input.mouse_pos_x
   my = Input.mouse_pos_y
 
@@ -68,6 +66,10 @@ Window.loop do
     elsif Input.key_push?(K_R)
       # ランダムを発動したらそこから末尾までの配列を削除にして常にランダムが最新になるようにしてもいい
       turn >= max ? doa.push_random(world) : doa.change_old_random(world, turn)
+      turn += 1
+      view.change(world, turn)
+    elsif Input.key_push?(K_D) || Input.key_push?(K_C)
+      turn >= max ? doa.push_clear(world) : doa.change_old_clear(world, turn)
       turn += 1
       view.change(world, turn)
     end

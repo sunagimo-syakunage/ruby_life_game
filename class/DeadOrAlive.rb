@@ -85,6 +85,14 @@ class DeadOrAlive
     # p 'old-random'
   end
 
+  def push_clear(world)
+    world << clear
+  end
+
+  def change_old_clear(world, turn)
+    world[turn + 1] = clear
+  end
+
   def random
     hoge_world = Array.new(@cell_num).map { Array.new(@cell_num, 0) }
     (0...@cell_num).each do |world_x|
@@ -93,5 +101,9 @@ class DeadOrAlive
       end
     end
     hoge_world
+  end
+
+  def clear
+    Array.new(@cell_num).map { Array.new(@cell_num, 0) }
   end
 end
