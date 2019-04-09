@@ -60,7 +60,7 @@ Window.loop do
       turn >= max ? doa.push_doa(world, turn) : doa.change_old_doa(world, turn)
       turn += 1
       view.change(world, turn)
-    elsif Input.key_down?(K_LEFT) || Input.key_push?(K_UP) && turn > 0
+    elsif (Input.key_down?(K_LEFT) || Input.key_push?(K_UP)) && turn > 0
       turn -= 1
       view.change(world, turn)
     elsif Input.key_push?(K_R)

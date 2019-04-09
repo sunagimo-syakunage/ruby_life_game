@@ -13,6 +13,7 @@ class View < Sprite
       (0...@cell_num).each do |wy|
         @world_view[wx][wy].x = wx * @cell_size
         @world_view[wx][wy].y = wy * @cell_size
+        @world_view[wx][wy].z=100
         @world_view[wx][wy].image = world[turn][wx][wy] == 1 ?
                                     @alive_img : @dead_img
       end
@@ -20,6 +21,7 @@ class View < Sprite
   end
 
   def view_run
+    Window.draw(0, 0,@background_img, z=0)
     Sprite.draw(@world_view)
   end
 end
