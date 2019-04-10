@@ -6,7 +6,7 @@ Window.load_resources do
 # 一辺のセル数
 cell_num = 50
 # キャンバスの幅
-screen_size = 800
+screen_size = 600
 # セルの大きさ
 cell_size = screen_size / cell_num
 
